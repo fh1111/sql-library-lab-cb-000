@@ -26,6 +26,8 @@ def select_series_title_with_most_human_characters
     ON character_books.character_id = characters.id
     WHERE characters.species = 'human'
     GROUP BY series.title
+    ORDER BY COUNT(*) DESC
+
   "
 end
 
